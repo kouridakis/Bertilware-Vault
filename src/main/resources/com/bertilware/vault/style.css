@@ -1,0 +1,239 @@
+.root {
+    /* Variables used for theming */
+    /* The below values are for the login theme */
+    primary: linear-gradient(rgb(0,219,222), rgb(252,0,255));
+    secondary: rgba(255,255,255,0.9);
+    hover: rgba(255,255,255,1);
+    list-hover: rgba(255,255,255,0.1);
+    list-selected: rgba(255,255,255,0.3);
+
+    -fx-background-color: primary;
+    -fx-background-radius: 10px;
+}
+
+/* Dialogs */
+#dialog-root {
+    -fx-border-style: solid;
+    -fx-border-color: secondary;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+}
+
+/* Text & Icons */
+*,
+* .label {
+    -fx-text-fill: secondary;
+    -fx-font-weight: bold;
+}
+
+.svg {
+    -fx-fill: secondary;
+}
+
+.hyperlink {
+    -fx-text-fill: rgba(0,200,200, 0.9);
+}
+
+/* Titlebar buttons */
+.titlebar {
+    -fx-background-color: rgba(0,0,0,0.1);
+    -fx-background-radius: 10px 10px 0 0;
+}
+
+.titlebar-button,
+.exit-button,
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-style: none;
+}
+
+.menu-button {
+    -fx-font-size: 14;
+    -fx-mark-color: secondary;
+    -fx-background-radius: 10px 0 0 0;
+}
+
+.exit-button {
+    -fx-background-radius: 0 10px 0 0;
+}
+
+.titlebar-button:hover,
+.menu-button:hover {
+    -fx-background-color: list-hover;
+}
+
+.exit-button:hover {
+    -fx-background-color: rgba(255,0,0,0.5);
+}
+
+
+/* Popup menus and items within them */
+.context-menu {
+    -fx-background-color: secondary;
+    -fx-background-radius: 5px;
+    -fx-padding: 2px;
+}
+
+.menu {
+    -fx-mark-color: primary;
+}
+
+.menu-item {
+    -fx-background-radius: 5px;
+}
+
+.menu-item .label {
+    -fx-font-size: 12;
+    -fx-text-fill: primary;
+}
+
+.menu-item:focused {
+    -fx-background-color: primary;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: secondary;
+}
+
+
+/* Standard buttons */
+.action-button {
+    -fx-text-fill: primary;
+    -fx-background-color: secondary;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 50px;
+}
+
+.action-button:hover {
+    -fx-background-color: hover;
+}
+
+
+/* Toggle buttons */
+.toggle-button {
+    -fx-text-fill: secondary;
+    -fx-background-color: transparent;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-border-color: secondary;
+    -fx-border-radius: 50px;
+}
+
+.toggle-button:selected {
+    -fx-text-fill: primary;
+    -fx-background-color: secondary;
+    -fx-border-color: transparent;
+}
+
+.toggle-button:hover {
+    -fx-text-fill: primary;
+    -fx-background-color: hover;
+    -fx-border-color: transparent;
+}
+
+
+/* Text fields & areas */
+.text-field {
+    -fx-background-color: transparent;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-border-color: secondary;
+    -fx-border-radius: 50px;
+}
+
+.text-field:hover ,
+.text-field:focused {
+    -fx-border-color: hover;
+}
+
+.text-area,
+.text-area .scroll-pane,
+.text-area .scroll-pane .viewport,
+.text-area .scroll-pane .content {
+    -fx-border-style: none;
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .content {
+    -fx-background-color: list-hover;
+    -fx-background-radius: 5px;
+}
+
+/* List views */
+.list-view {
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-width: 2px 0;
+    -fx-border-color: secondary;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+}
+
+.list-cell:hover {
+    -fx-background-color: list-hover;
+}
+
+.list-cell:selected {
+    -fx-background-color: list-selected;
+}
+
+/* Scrollbars */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-radius: 15px;
+}
+
+.scroll-bar .thumb,
+.increment-arrow,
+.decrement-arrow {
+    -fx-background-color: list-selected;
+}
+
+.scroll-bar .thumb:pressed,
+.scroll-bar .thumb:hover {
+    -fx-background-color: hover;
+}
+
+.increment-button:hover,
+.increment-button:pressed,
+.decrement-button:hover,
+.decrement-button:pressed {
+    -fx-background-color: list-hover;
+}
+
+/* Checkboxes */
+.check-box .box {
+    -fx-background-color: secondary;
+}
+
+.check-box:selected {
+    -fx-mark-color: primary;
+}
+
+.check-box .box:hover {
+    -fx-background-color: hover;
+}
+
+/* Sliders */
+.slider .track {
+    -fx-background-color: secondary;
+}
+
+.slider .thumb {
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-border-radius: 100%;
+    -fx-border-color: secondary;
+    -fx-background-color: primary;
+}

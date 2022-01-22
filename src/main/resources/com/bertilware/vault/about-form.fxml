@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<VBox id="dialog-root" fx:id="rootVBox" minWidth="400.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bertilware.vault.AboutDialogController">
+   <children>
+      <HBox fx:id="titleHBox" styleClass="titlebar">
+         <children>
+            <Label graphicTextGap="5.0" minHeight="30.0" text="About">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/vault-icon-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Separator focusTraversable="false" visible="false" HBox.hgrow="ALWAYS" />
+            <Button fx:id="minimizeButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" styleClass="titlebar-button" text="Minimize">
+               <graphic>
+                  <SVGPath content="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" fillRule="EVEN_ODD" styleClass="svg" />
+               </graphic>
+            </Button>
+            <Button fx:id="exitButton" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" styleClass="exit-button" text="Close">
+               <graphic>
+                  <SVGPath content="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z&#10;M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z&#10;" fillRule="EVEN_ODD" styleClass="svg" />
+               </graphic>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="1.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" spacing="10.0">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/vault-icon.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER_LEFT">
+               <children>
+                  <Label alignment="CENTER" graphicTextGap="10.0" text="Bertilware Vault" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" graphicTextGap="10.0" text="A secure and open source password manager" wrapText="true" />
+                  <Label alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="0.0" text="Homepage:" textAlignment="CENTER" wrapText="true">
+                     <graphic>
+                        <Hyperlink fx:id="homepageLink" contentDisplay="TEXT_ONLY" graphicTextGap="0.0" text="www.bertilware.com" textFill="#000000e8" />
+                     </graphic>
+                  </Label>
+                  <Label alignment="CENTER" graphicTextGap="10.0" text="Covered by the Apache-2.0 License" wrapText="true" />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="BOTTOM_CENTER" spacing="30.0">
+         <children>
+            <Button fx:id="okButton" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" styleClass="action-button" text="OK" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
