@@ -9,9 +9,11 @@ A secure and open source password manager that is written in Java and uses the J
 * Includes various themes!
 
 ## Installation
-You can find installer packages in the releases section.
+**Windows:** You can use either the setup executable or the jar file found in the releases section.
 
-The installer packages are compiled using Inno Setup and include:
+**Linux:** You can use the same jar file as with Windows. 
+
+The setup executable is compiled using Inno Setup and include:
 * A jar file, compiled using Apache Maven.
 * An executable file, compiled using Launch4j.
 * A bundled Java Runtime Environment, compiled by running jlink on an Eclipse Adoptium JDK, that also includes JavaFX.
