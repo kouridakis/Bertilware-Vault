@@ -1,9 +1,8 @@
 .root {
     /* Variables used for theming */
-    /* The below values are for the login theme */
-    primary: linear-gradient(rgb(0,219,222), rgb(252,0,255));
+    primary: rgb(35,15,90);
     secondary: rgba(255,255,255,0.9);
-    hover: rgba(255,255,255,1);
+    hover: rgb(255,255,255);
     list-hover: rgba(255,255,255,0.1);
     list-selected: rgba(255,255,255,0.3);
 
@@ -36,7 +35,7 @@
 
 /* Titlebar buttons */
 .titlebar {
-    -fx-background-color: rgba(0,0,0,0.1);
+    -fx-background-color: rgba(0,0,0,0.2);
     -fx-background-radius: 10px 10px 0 0;
 }
 
@@ -175,6 +174,8 @@
 
 .list-cell {
     -fx-background-color: transparent;
+    -fx-padding: 5px;
+    -fx-font-size: 14;
 }
 
 .list-cell:hover {
@@ -217,8 +218,8 @@
     -fx-background-color: secondary;
 }
 
-.check-box:selected {
-    -fx-mark-color: primary;
+.check-box:selected .mark{
+    -fx-background-color: primary;
 }
 
 .check-box .box:hover {

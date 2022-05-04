@@ -2,10 +2,11 @@
 A secure and open source password manager that is written in Java and uses the JavaFX library.
 
 ## Features
-* Encrypts every user's data using AES-128.
-* Supports syncing data between two devices connected to the same network.
-* Supports importing/exporting passwords from/to browsers.
-* Includes search functionality to help manage huge numbers of saved passwords.
+* Encrypts every user's data using AES-256
+* Supports syncing data between devices connected to the same network.
+* Supports importing/exporting passwords from/to CSV files.
+* Includes a password generator.
+* Includes searching and sorting functionality to help manage huge numbers of saved passwords.
 * Includes various themes!
 
 ## Installation
@@ -13,10 +14,12 @@ A secure and open source password manager that is written in Java and uses the J
 
 **Linux:** You can use the same jar file as with Windows. 
 
+**MacOS:** The same jar file should work as well, though it has not been tested.
+
 The setup executable is compiled using Inno Setup and include:
 * A jar file, compiled using Apache Maven.
 * An executable file, compiled using Launch4j.
-* A bundled Java Runtime Environment, compiled by running jlink on an Eclipse Adoptium JDK, that also includes JavaFX.
+* A bundled Java Runtime Environment, compiled by running jlink on an Eclipse Adoptium JDK.
 * A license file.
 * An icon file. 
 

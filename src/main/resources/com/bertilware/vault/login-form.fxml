@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="rootVBox" alignment="TOP_CENTER" fillWidth="false" spacing="20.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bertilware.vault.LoginDialogController">
+<VBox fx:id="rootVBox" alignment="TOP_CENTER" fillWidth="false" spacing="20.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bertilware.vault.controllers.LoginDialogController">
 
    <children>
       <HBox fx:id="titleHBox" alignment="TOP_RIGHT" minWidth="300.0" styleClass="titlebar">

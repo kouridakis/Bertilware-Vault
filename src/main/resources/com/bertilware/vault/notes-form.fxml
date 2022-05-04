@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<VBox id="dialog-root" fx:id="rootVBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" spacing="10.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bertilware.vault.NotesDialogController">
+<VBox id="dialog-root" fx:id="rootVBox" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" spacing="10.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bertilware.vault.controllers.NotesDialogController">
    <children>
       <HBox fx:id="titleHBox" styleClass="titlebar" VBox.vgrow="NEVER">
          <children>
@@ -23,7 +23,7 @@
                   <Insets left="5.0" />
                </HBox.margin>
                <graphic>
-                  <SVGPath content="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z&#10;M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" fillRule="EVEN_ODD" styleClass="svg" />
+                  <SVGPath content="M20.225 15.1 17.9 12.775 18.625 12.05Q18.95 11.75 19.425 11.738Q19.9 11.725 20.225 12.05L20.95 12.775Q21.275 13.1 21.263 13.575Q21.25 14.05 20.95 14.375ZM11.85 21.15V18.825L17.2 13.475L19.525 15.8L14.175 21.15ZM2.85 16.225V13.95H10.225V16.225ZM2.85 12.025V9.75H14.15V12.025ZM2.85 7.85V5.575H14.15V7.85Z" fillRule="EVEN_ODD" styleClass="svg" />
                </graphic>
             </Label>
             <Separator focusTraversable="false" visible="false" HBox.hgrow="ALWAYS" />
@@ -58,7 +58,7 @@
          <children>
             <Button fx:id="saveButton" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" styleClass="action-button" text="Save" />
             <Separator focusTraversable="false" visible="false" HBox.hgrow="ALWAYS" />
-            <Button fx:id="resizeButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" styleClass="titlebar-button" text="Resize">
+            <Button fx:id="resizeButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-radius: 5px;" styleClass="titlebar-button" text="Resize">
                <graphic>
                   <SVGPath content="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z" styleClass="svg" />
                </graphic>

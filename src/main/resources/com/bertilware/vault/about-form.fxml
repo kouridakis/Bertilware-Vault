@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<VBox id="dialog-root" fx:id="rootVBox" minWidth="400.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bertilware.vault.AboutDialogController">
+<VBox id="dialog-root" fx:id="rootVBox" minWidth="400.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bertilware.vault.controllers.AboutDialogController">
    <children>
       <HBox fx:id="titleHBox" styleClass="titlebar">
          <children>

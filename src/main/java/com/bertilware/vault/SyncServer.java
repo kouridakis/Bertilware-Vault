@@ -1,25 +1,28 @@
 package com.bertilware.vault;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+import javax.crypto.Cipher;
+import javax.crypto.CipherOutputStream;
 import java.io.ObjectOutputStream;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
+import java.net.*;
 import java.util.Arrays;
 
 public class SyncServer implements Runnable {
+    private boolean halt;
+    public SyncServer() {
+        halt = false;
+    }
+
     @Override
     public void run() {
-        try {
-            DatagramSocket socket = new DatagramSocket(7515, InetAddress.getByName("0.0.0.0"));
-            socket.setBroadcast(true);
-
-            while (true) {
-                // Receive hash
+        while (!halt) {
+            try (DatagramSocket broadcastSocket = new DatagramSocket(37515, InetAddress.getByName("0.0.0.0"))) {
+                broadcastSocket.setBroadcast(true);
+                // Wait for a hash UDP packet
                 byte[] buffer = new byte[1024];
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-                socket.receive(packet);
+
+                broadcastSocket.setSoTimeout(60000);
+                broadcastSocket.receive(packet);
                 // Ignore if it originated from the same host
                 if (packet.getAddress().getHostAddress().equals(InetAddress.getLocalHost().getHostAddress()))
                     continue;
@@ -27,30 +30,30 @@ public class SyncServer implements Runnable {
                 // Trim down to only the required bytes
                 byte[] receivedHash = Arrays.copyOfRange(packet.getData(), 0, 64);
 
-                DatagramPacket replyPacket;
-                // Compare received hash with local one
-                if (Arrays.equals(receivedHash, EncryptionManager.getHash()))  {
-                    // Create UDP packet and send
-                    try {
-                        ByteArrayOutputStream byteOut = new ByteArrayOutputStream();
-                        ObjectOutputStream objectOut = new ObjectOutputStream(byteOut);
-                        objectOut.writeObject(EncryptionManager.getAccounts());
-                        objectOut.close();
-                        byte[] accounts = byteOut.toByteArray();
+                // Check if hashes match
+                if (Arrays.equals(receivedHash, VaultManager.getHash())) {
+                    // Initiate a TCP connection and send all saved accounts
+                    SocketAddress address = new InetSocketAddress(packet.getAddress().getHostAddress(), 37517);
+                    try (Socket dataSocket = new Socket()) {
+                        dataSocket.connect(address, 5000);
 
-                        replyPacket = new DatagramPacket(
-                                accounts, accounts.length,
-                                packet.getAddress(), packet.getPort()
+                        CipherOutputStream cipherOut = new CipherOutputStream(
+                                dataSocket.getOutputStream(),
+                                VaultManager.getCipherForSync(Cipher.ENCRYPT_MODE)
                         );
-                        socket.send(replyPacket);
-                    } catch (Exception e) {
-                        VaultDialog.createErrorDialog(e);
+                        ObjectOutputStream objectOut = new ObjectOutputStream(cipherOut);
+                        objectOut.writeObject(VaultManager.getAccounts());
+                        objectOut.close();
                     }
                 }
+            } catch (SocketTimeoutException ignored) {
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-
-        } catch (IOException e) {
-            VaultDialog.createErrorDialog(e);
         }
+    }
+
+    public void halt() {
+        halt = true;
     }
 }

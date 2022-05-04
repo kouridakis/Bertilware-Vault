@@ -58,10 +58,9 @@ public class Account implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof Account)) {
+        if (!(obj instanceof Account other)) {
             return false;
         }
-        Account other = (Account) obj;
         return other.getService().equals(service) &&
                 other.getUsername().equals(username) &&
                 other.getPassword().equals(password);

@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<VBox id="dialog-root" fx:id="rootVBox" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bertilware.vault.SyncDialogController">
+<VBox id="dialog-root" fx:id="rootVBox" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bertilware.vault.controllers.SyncDialogController">
    <children>
       <HBox fx:id="titleHBox" styleClass="titlebar">
          <children>
@@ -21,7 +21,7 @@
                   <Insets left="5.0" />
                </HBox.margin>
                <graphic>
-                  <SVGPath content="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z&#10;M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" fillRule="EVEN_ODD" styleClass="svg" />
+                  <SVGPath content="M16.9 13.1 15.3 11.5 17.85 8.95H2.85V6.675H17.85L15.3 4.125L16.9 2.525L22.2 7.8ZM7.1 21.475 1.8 16.2 7.1 10.9 8.7 12.5 6.15 15.05H21.15V17.325H6.15L8.7 19.875Z" fillRule="EVEN_ODD" styleClass="svg" />
                </graphic>
             </Label>
             <Separator focusTraversable="false" visible="false" HBox.hgrow="ALWAYS" />

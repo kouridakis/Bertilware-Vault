@@ -16,7 +16,7 @@ import java.io.InputStream;
 // that is used for creating various different dialogs.
 // Where needed, the result variable is set to 0 if the user pressed the OK or YES button,
 // meanwhile it is set to 1 if the user cancelled, or if an error occurred.
-public class VaultDialog {
+public final class VaultDialog {
     private static int result = 1;
     private static String message;
     private static String okButtonText;
@@ -56,6 +56,12 @@ public class VaultDialog {
     // Various methods for creating different types of dialogs
     public static void createLoginDialog() {
         init("Login", "login-form.fxml",
+                null, null, null,
+                null, null, null);
+    }
+
+    public static void createUserDialog() {
+        init("User", "user-form.fxml",
                 null, null, null,
                 null, null, null);
     }

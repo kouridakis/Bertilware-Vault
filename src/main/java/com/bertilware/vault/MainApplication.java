@@ -19,10 +19,6 @@ public class MainApplication extends Application {
             System.exit(0);
         }
 
-        // Create the SyncListener background thread
-        Thread sync = new Thread(new SyncServer());
-        sync.start();
-
         // Load the FXML file and create the scene.
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main-form.fxml"));
         Scene scene = new Scene(loader.load());
@@ -36,7 +32,7 @@ public class MainApplication extends Application {
         stage.sizeToScene();
 
         // Add the icon while making sure it's not null.
-        // This is needed even with the titlebar disabled,
+        // This is needed even with the title bar disabled,
         // so the icon in the taskbar is set.
         InputStream iconStream = getClass().getResourceAsStream("images/vault-icon.png");
         if (iconStream != null) {

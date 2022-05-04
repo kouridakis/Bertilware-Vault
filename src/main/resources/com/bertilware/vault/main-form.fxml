@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 
-<VBox fx:id="rootVBox" minHeight="500.0" minWidth="700.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bertilware.vault.MainApplicationController">
+<VBox fx:id="rootVBox" minHeight="500.0" minWidth="700.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bertilware.vault.controllers.MainApplicationController">
    <children>
       <HBox fx:id="titleHBox" styleClass="titlebar">
          <children>
@@ -25,10 +25,11 @@
               <items>
                   <MenuItem fx:id="notesItem" mnemonicParsing="false" text="Open notes" />
                   <MenuItem fx:id="syncItem" mnemonicParsing="false" text="Sync from LAN" />
+                <MenuItem fx:id="importItem" mnemonicParsing="false" text="Import from file" />
+                <MenuItem fx:id="exportItem" mnemonicParsing="false" text="Export to file" />
                   <Menu mnemonicParsing="false" text="Set theme">
                     <items>
                       <MenuItem fx:id="bertilwareItem" mnemonicParsing="false" text="Bertilware" />
-                        <MenuItem fx:id="camoItem" mnemonicParsing="false" text="Camo" />
                         <MenuItem fx:id="GunmetalItem" mnemonicParsing="false" text="Gunmetal" />
                         <MenuItem fx:id="swedenItem" mnemonicParsing="false" text="Sweden" />
                         <MenuItem fx:id="greeceItem" mnemonicParsing="false" text="Greece" />
@@ -36,8 +37,7 @@
                         <MenuItem fx:id="lightItem" mnemonicParsing="false" text="Light" />
                     </items>
                   </Menu>
-                <MenuItem fx:id="importItem" mnemonicParsing="false" text="Import from file" />
-                <MenuItem fx:id="exportItem" mnemonicParsing="false" text="Export to file" />
+                  <MenuItem fx:id="editUserItem" mnemonicParsing="false" text="Edit user" />
                   <MenuItem fx:id="aboutItem" mnemonicParsing="false" text="About" />
               </items>
                <graphic>
@@ -69,13 +69,12 @@
       </HBox>
       <HBox alignment="CENTER" fillHeight="false" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" spacing="5.0" VBox.vgrow="NEVER">
          <children>
-            <Label contentDisplay="RIGHT" graphicTextGap="10.0" text="Search:">
-               <graphic>
-                  <TextField fx:id="searchField" minWidth="150.0" />
-               </graphic>
-            </Label>
-            <Separator focusTraversable="false" visible="false" HBox.hgrow="ALWAYS" />
-            <Label alignment="CENTER_RIGHT" text="Search Fields:" textAlignment="CENTER" />
+            <Button fx:id="sortButton" minWidth="70.0" mnemonicParsing="false" styleClass="action-button" text="Newest" />
+            <TextField fx:id="searchField" minWidth="150.0" promptText="Search" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin>
+            </TextField>
             <ToggleButton fx:id="servicesToggle" minWidth="85.0" mnemonicParsing="false" selected="true" text="Services" />
             <ToggleButton fx:id="usernamesToggle" minWidth="85.0" mnemonicParsing="false" selected="true" text="Usernames" />
             <ToggleButton fx:id="passwordsToggle" minWidth="85.0" mnemonicParsing="false" selected="true" text="Passwords" />
@@ -103,7 +102,7 @@
                   <Insets />
                </HBox.margin></Label>
             <Separator focusTraversable="false" visible="false" HBox.hgrow="ALWAYS" />
-            <Button fx:id="resizeButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" styleClass="titlebar-button" text="Resize">
+            <Button fx:id="resizeButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" style="-fx-background-radius: 5px;" styleClass="titlebar-button" text="Resize">
                <graphic>
                   <SVGPath content="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z" styleClass="svg" />
                </graphic>
