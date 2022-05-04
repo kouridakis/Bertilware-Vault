@@ -1,0 +1,154 @@
+* {
+    color: white;
+    text-align: center;
+}
+
+html {
+    background-image: url("resources/background.jpg"); /*Image by Dynamic Wang on Unsplash*/
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.title,
+.group,
+.content,
+.download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin-top: 10rem;
+    height: 50vh;
+}
+
+.title img {
+	width: 15rem;
+	height: auto;
+	border-radius: 20%;
+    box-shadow: 5px 5px 5px black;
+}
+
+.title h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    text-shadow: 5px 5px 5px black;
+}
+
+.group {
+    padding: 2rem 1rem;
+    margin: 1rem 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+
+.group h3,
+.group p {
+    font-weight: 700;
+}
+
+.material-symbols-outlined {
+    font-size: 20rem;
+}
+
+#encryption {
+    background-image:  url("resources/encryption.jpg"); /*Photo by Towfiqu barbhuiya on Unsplash*/
+}
+
+#sync {
+    background-image: url("resources/sync.jpg"); /*Photo by Nathan Dumlao on Unsplash*/
+}
+
+#password {
+    background-image: url("resources/password.jpg"); /*Photo by olieman.eth on Unsplash*/
+}
+
+#import {
+    background-image: url("resources/import.jpg"); /*Photo by Vincent Botta on Unsplash*/
+}
+
+.content {
+    margin: 0;
+    padding: 2rem 0 3rem 0;
+    background-color: white;
+}
+
+h2 {
+    margin: 2rem 1rem;
+    padding: 0 1rem 1rem 1rem;
+    width: fit-content;
+    font-weight: 500;
+}
+
+.content h2 {
+    color: black;
+    border-bottom: 1px solid black;
+}
+
+.download h2 {
+    text-shadow: 0 0 5px black;
+    border-bottom: 1px solid white;
+}
+
+.download p {
+    text-shadow: 0 0 5px black;
+}
+
+.button {
+    color: black;
+    background-color: white;
+    border-color: white;
+    font-size: 2rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 2rem;
+    margin: 1rem;
+}
+
+.button i {
+    color: black;
+}
+
+.footer {
+    margin: 1rem 0 0 0;
+    padding: 0;
+    background-color: black;
+}
+
+.footer a {
+    font-weight: 500;
+}
+
+/* Larger than tablets */
+@media (min-width: 80.0rem) {
+    .content {
+        margin: 0 10vw;
+    }
+    
+    .group {
+        width: 50%;
+    }
+
+    .group-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .group-reverse h3,
+    .group-reverse p {
+        text-align: end;
+    }
+
+    .group-normal {
+        flex-direction: row;
+    }
+
+    .group-normal h3,
+    .group-normal p {
+        text-align: start;
+    }
+}

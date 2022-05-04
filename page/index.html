@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset = 'UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bertilware Vault</title>
+    <link rel="icon" type="image/jpg" href="resources/vaultfavicon.png"/>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,700&display=swap" rel="stylesheet">
+    <!-- Google Icons -->
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 500,
+          'GRAD' 0,
+          'opsz' 48
+        }
+    </style>
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <!-- Animate CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Custom CSS -->
+    <link href='style.css' type='text/css' rel='stylesheet'>
+</head>
+    
+<body>
+    <div class="title">
+        <img id="logo" src="resources/vault.png"/>
+        <h1 class="animate__animated animate__fadeIn">Bertilware Vault</h1>
+        <h5 class="animate__animated animate__fadeIn">A secure and open-source password manager</h5>
+    </div>
+        
+    <div class="content animate__animated animate__fadeInUp">
+        <h2>Why download the Vault?</h2>
+
+        <div id="encryption" class="group group-reverse">
+            <span class="material-symbols-outlined">enhanced_encryption</span>
+            <div class="text">
+                <h3>Military-Grade Encryption</h3>
+                <p>
+                    All of your passwords are encrypted using the Advanced Encryption Standard,
+                    the only cipher available to the public that is approved by the NSA 
+                    for securing the highest level of classified information.
+                </p>
+            </div>
+        </div>
+
+        <div id="sync" class="group group-normal">
+            <span class="material-symbols-outlined">sync_alt</span>
+            <div class="text">
+                <h3>Serverless Syncing</h3>
+                <p>
+                    Unlike other password managers, your data is never sent to any cloud servers when syncing across devices, 
+                    instead your information is exchanged directly and securely between your devices.
+                </p>
+            </div>
+        </div>
+        
+        <div id="password" class="group group-reverse">
+            <span class="material-symbols-outlined">password</span>
+            <div class="text">
+                <h3>Strong Password Generation</h3>
+                <p>
+                    Using the built-in password generator, you can create secure and unique passwords for all of your online accounts.
+                </p>
+            </div>
+        </div>
+
+        <div id="import" class="group group-normal">
+            <span class="material-symbols-outlined">file_download</span>
+            <div class="text">
+                <h3>Import from Browsers</h3>
+                <p>
+                    Easily import all of your existing passwords, no matter what browser you use.
+                </p> 
+            </div>
+        </div>
+    </div>
+
+    <div class="download">
+        <h2>Convinced? Try it out!</h2>
+        
+        <div class="buttons">
+            <a target="_blank" href="https://github.com/Spookybastian/Bertilware-Vault/releases/download/v1.1/vault-1.1-setup.exe" class="button">
+                <i class="fa-brands fa-microsoft"></i> Windows installer
+            </a>
+            <a target="_blank" href="https://github.com/Spookybastian/Bertilware-Vault/releases/download/v1.1/bertilware-vault-1.1.jar" class="button">
+                <i class="fa-brands fa-microsoft"></i> <i class="fa-brands fa-linux"></i> <i class="fa-brands fa-apple"></i> Java executable*
+            </a>
+        </div>
+        
+        <p>*requires an installed Java Runtime</p>
+    </div>
+
+    <p class="footer">Made by <a target= "_blank" href="https://sebastian.bertilware.com/">Sebastian K</a></p>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a184d5ae93.js" crossorigin="anonymous"></script>
+</body>
+</html>
